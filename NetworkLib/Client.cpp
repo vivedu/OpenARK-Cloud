@@ -22,13 +22,13 @@ namespace NetworkLib
 	void Client::start_receive()
 	{
 		socket.async_receive_from(boost::asio::buffer(recv_buffer), remote_endpoint,
-		                          [this](std::error_code ec, std::size_t bytes_recvd)
+		                          [this](boost::system::error_code ec, std::size_t bytes_recvd)
 		                          {
 			                          this->handle_receive(ec, bytes_recvd);
 		                          });
 	}
 
-	void Client::handle_receive(const std::error_code& error, std::size_t bytes_transferred)
+	void Client::handle_receive(const boost::system::error_code& error, std::size_t bytes_transferred)
 	{
 		if (!error)
 		{

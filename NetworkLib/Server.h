@@ -48,10 +48,10 @@ namespace NetworkLib
 
 		// Low-level network functions
 		void start_receive();
-		void handle_remote_error(std::error_code error_code, udp::endpoint remote_endpoint);
-		void handle_receive(const std::error_code& error, std::size_t bytes_transferred);
+		void handle_remote_error(boost::system::error_code error_code, udp::endpoint remote_endpoint);
+		void handle_receive(const boost::system::error_code& error, std::size_t bytes_transferred);
 
-		void handle_send(std::string /*message*/, const std::error_code& /*error*/, std::size_t /*bytes_transferred*/)
+		void handle_send(std::string /*message*/, const boost::system::error_code& /*error*/, std::size_t /*bytes_transferred*/)
 		{
 		}
 

@@ -20,7 +20,7 @@ namespace NetworkLib
 	void Server::start_receive()
 	{
 		socket.async_receive_from(boost::asio::buffer(recv_buffer), remote_endpoint,
-		                          [this](std::error_code ec, std::size_t bytes_recvd)
+		                          [this](boost::system::error_code ec, std::size_t bytes_recvd)
 		                          {
 			                          this->handle_receive(ec, bytes_recvd);
 		                          });
@@ -33,7 +33,7 @@ namespace NetworkLib
 				handler(id);
 	}
 
-	void Server::handle_remote_error(const std::error_code error_code, const udp::endpoint remote_endpoint)
+	void Server::handle_remote_error(const boost::system::error_code error_code, const udp::endpoint remote_endpoint)
 	{
 		bool found = false;
 		int32_t id;
@@ -51,7 +51,7 @@ namespace NetworkLib
 		on_client_disconnected(id);
 	}
 
-	void Server::handle_receive(const std::error_code& error, std::size_t bytes_transferred)
+	void Server::handle_receive(const boost::system::error_code& error, std::size_t bytes_transferred)
 	{
 		if (!error)
 		{

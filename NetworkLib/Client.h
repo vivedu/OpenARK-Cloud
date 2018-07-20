@@ -40,7 +40,7 @@ namespace NetworkLib
 		LockedQueue<std::string> incomingMessages;
 
 		void start_receive();
-		void handle_receive(const std::error_code& error, std::size_t bytes_transferred);
+		void handle_receive(const boost::system::error_code& error, std::size_t bytes_transferred);
 		void run_service();
 
 		Client(Client&); // block default copy constructor
