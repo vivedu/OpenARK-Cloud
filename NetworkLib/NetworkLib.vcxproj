@@ -81,6 +81,7 @@
     <ClCompile Include="Factory.cpp" />
     <ClCompile Include="Server.cpp" />
     <ClCompile Include="Statistics.cpp" />
+    <ClCompile Include="Util.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Constants.h" />
@@ -93,6 +94,7 @@
     <ClInclude Include="Server.h" />
     <ClInclude Include="Statistics.h" />
     <ClInclude Include="targetver.h" />
+    <ClInclude Include="Util.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
