@@ -1,2 +1,2 @@
 #pragma once
-static const int NetworkBufferSize = 4096;
+static const int NetworkBufferSize = 100000;
